@@ -17,8 +17,4 @@
     <ProjectReference Include="..\Web.Domain\Web.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
 </Project>

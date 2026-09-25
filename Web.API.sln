@@ -9,14 +9,21 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.API", "Web.API\Web.API.
 		{D097B0FC-1902-46BA-AE2A-16D438D89039} = {D097B0FC-1902-46BA-AE2A-16D438D89039}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Infrastructure", "Web.Postgress\Web.Infrastructure.csproj", "{D097B0FC-1902-46BA-AE2A-16D438D89039}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Infrastructure", "Web.Infrastructure\Web.Infrastructure.csproj", "{D097B0FC-1902-46BA-AE2A-16D438D89039}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Application", "Web.Contracts\Web.Application.csproj", "{91D9F48E-A8C2-4EBC-A14A-DD6232C8FCCC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Application", "Web.Application\Web.Application.csproj", "{91D9F48E-A8C2-4EBC-A14A-DD6232C8FCCC}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1E6544E8-5EB7-4795-8904-A4AF12EAA820} = {1E6544E8-5EB7-4795-8904-A4AF12EAA820}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Domain", "Web.Domain\Web.Domain.csproj", "{1E6544E8-5EB7-4795-8904-A4AF12EAA820}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.API.Tests", "Web.API.Tests\Web.API.Tests.csproj", "{C359734B-C096-4B49-BFEE-17F087FE7F1E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{91D9F48E-A8C2-4EBC-A14A-DD6232C8FCCC} = {91D9F48E-A8C2-4EBC-A14A-DD6232C8FCCC}
+		{D097B0FC-1902-46BA-AE2A-16D438D89039} = {D097B0FC-1902-46BA-AE2A-16D438D89039}
+		{D1CA53D8-3289-4699-9AE1-CE48E353568B} = {D1CA53D8-3289-4699-9AE1-CE48E353568B}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +47,10 @@ Global
 		{1E6544E8-5EB7-4795-8904-A4AF12EAA820}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E6544E8-5EB7-4795-8904-A4AF12EAA820}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E6544E8-5EB7-4795-8904-A4AF12EAA820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C359734B-C096-4B49-BFEE-17F087FE7F1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C359734B-C096-4B49-BFEE-17F087FE7F1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C359734B-C096-4B49-BFEE-17F087FE7F1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C359734B-C096-4B49-BFEE-17F087FE7F1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,26 @@
+**/.git
+**/.github
+**/.vs
+**/.claude
+**/bin
+**/obj
+**/node_modules
+**/logs
+**/*.user
+**/*.suo
+**/_to_delete
+
+# old pre-rename directories left on disk locally, not part of the build
+Web.Postgress/
+Web.Contracts/
+
+# test project isn't needed in the runtime image
+Web.API.Tests/
+
+# local secrets / real connection strings — container gets config via env vars
+Web.API/appsettings.json
+
+Dockerfile*
+docker-compose*
+.dockerignore
+README.md

@@ -1,0 +1,36 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Web.API/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__ShopDbContext: "User ID=postgres;Password=postgres;Host=postgres;Port=5432;Database=shop"
+      JwtSettings__SecretKey: ${JWT_SECRET_KEY:-SUPER_SECRET_KEY}
+      JwtSettings__Issuer: AppApi
+      JwtSettings__Audience: AppClient
+      JwtSettings__ExpiryInMinutes: 180
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  postgres:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: shop
+    ports:
+      - "5433:5432"
+    volumes:
+      - shop_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  shop_pgdata:

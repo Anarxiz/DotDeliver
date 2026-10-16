@@ -44,6 +44,10 @@ public class ApiFixture : WebApplicationFactory<Program>, IAsyncLifetime
     {
         await _postgres.StartAsync();
         Environment.SetEnvironmentVariable("ConnectionStrings__ShopDbContext", _postgres.GetConnectionString());
+        Environment.SetEnvironmentVariable("JwtSettings__SecretKey", "test-secret-key-for-integration-tests-only-1234567890");
+        Environment.SetEnvironmentVariable("JwtSettings__Issuer", "TestIssuer");
+        Environment.SetEnvironmentVariable("JwtSettings__Audience", "TestAudience");
+        Environment.SetEnvironmentVariable("JwtSettings__ExpiryInMinutes", "60");
 
         using var scope = Services.CreateScope();
         var db = scope.ServiceProvider.GetRequiredService<ShopDbContext>();

@@ -1,0 +1,25 @@
+[1mdiff --git a/Web.API.sln b/Web.API.sln[m
+[1mindex f69c0d2..873cae4 100644[m
+[1m--- a/Web.API.sln[m
+[1m+++ b/Web.API.sln[m
+[36m@@ -25,6 +25,10 @@[m [mProject("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.API.Tests", "Web.API.Te[m
+ 		{D1CA53D8-3289-4699-9AE1-CE48E353568B} = {D1CA53D8-3289-4699-9AE1-CE48E353568B}[m
+ 	EndProjectSection[m
+ EndProject[m
+[32m+[m[32mProject("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}"[m
+[32m+[m[32mEndProject[m
+[32m+[m[32mProject("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{66C20746-8573-462F-A5DA-F6C62D553A7C}"[m
+[32m+[m[32mEndProject[m
+ Global[m
+ 	GlobalSection(SolutionConfigurationPlatforms) = preSolution[m
+ 		Debug|Any CPU = Debug|Any CPU[m
+[36m@@ -55,6 +59,9 @@[m [mGlobal[m
+ 	GlobalSection(SolutionProperties) = preSolution[m
+ 		HideSolutionNode = FALSE[m
+ 	EndGlobalSection[m
+[32m+[m	[32mGlobalSection(NestedProjects) = preSolution[m
+[32m+[m		[32m{66C20746-8573-462F-A5DA-F6C62D553A7C} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}[m
+[32m+[m	[32mEndGlobalSection[m
+ 	GlobalSection(ExtensibilityGlobals) = postSolution[m
+ 		SolutionGuid = {B09F8327-BE81-48C2-A1F6-4B3223655AB3}[m
+ 	EndGlobalSection[m

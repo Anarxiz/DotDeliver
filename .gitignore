@@ -368,3 +368,6 @@ FodyWeavers.xsd
 # Docker / local secrets
 .env
 .env.*
+
+# Code coverage reports (generated, not source)
+**/coveragereport/

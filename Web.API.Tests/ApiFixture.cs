@@ -43,6 +43,7 @@ public class ApiFixture : WebApplicationFactory<Program>, IAsyncLifetime
     public async ValueTask InitializeAsync()
     {
         await _postgres.StartAsync();
+        Environment.SetEnvironmentVariable("ConnectionStrings__ShopDbContext", _postgres.GetConnectionString());
 
         using var scope = Services.CreateScope();
         var db = scope.ServiceProvider.GetRequiredService<ShopDbContext>();

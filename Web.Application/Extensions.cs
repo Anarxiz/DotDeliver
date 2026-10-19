@@ -12,6 +12,7 @@ public static class Extensions
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration) {
         services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
+        services.Configure<MailSettings>(configuration.GetSection("MailSetting"));
 
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<IOrderService, OrderService>();
@@ -30,6 +31,8 @@ public static class Extensions
         services.AddValidatorsFromAssemblyContaining<UpdateDishRequestValidator>();
         services.AddValidatorsFromAssemblyContaining<UpdateOrderStatusRequestValidator>();
         services.AddValidatorsFromAssemblyContaining<UpdateProfileRequestValidator>();
+
+        services.AddScoped<INotificationDispatcher, NotificationDispatcher>();
 
         return services;
     }

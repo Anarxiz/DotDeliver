@@ -11,6 +11,7 @@ using Web.API.OpenApi;
 using Web.Application;
 using Web.Domain.Enums;
 using Web.Infrastructure;
+using Web.Infrastructure.Notifications;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,7 +23,8 @@ builder.Services.AddSerilog((services, config) => config
 
 builder.Services
     .AddApplicationServices(builder.Configuration)
-    .AddDataAccess(builder.Configuration);
+    .AddDataAccess(builder.Configuration)
+    .AddNotificationChannels();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options => {

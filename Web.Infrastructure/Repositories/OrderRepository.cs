@@ -94,4 +94,13 @@ public class OrderRepository(ShopDbContext db) : IOrderRepository
 
         return affected > 0;
     }
+
+    public async Task<Guid?> GetUserIdByOrderIdAsync(Guid id)
+    {
+        return await db.Orders
+            .AsNoTracking()
+            .Where(o => o.Id == id)
+            .Select(u => (Guid?)u.UserId)
+            .FirstOrDefaultAsync();
+    }
 }

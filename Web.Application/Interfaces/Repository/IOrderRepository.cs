@@ -9,4 +9,5 @@ public interface IOrderRepository
     Task<Guid> CreateAsync(Guid userId, Guid addressId, decimal totalPrice, List<OrderItemResponse> items);
 
     Task<bool> UpdateStatusAsync(Guid id, UpdateOrderStatusRequest request);
+    Task<Guid?> GetUserIdByOrderIdAsync(Guid orderId);
 }

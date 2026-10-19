@@ -10,6 +10,7 @@ using System.Net.Http.Headers;
 using System.Threading.RateLimiting;
 using Testcontainers.PostgreSql;
 using Web.API.Tests;
+using Web.API.Tests.Extensions;
 using Web.Application.Contracts.Auth;
 using Web.Application.Interfaces.Repository;
 using Web.Application.Interfaces.Service;
@@ -37,6 +38,9 @@ public class ApiFixture : WebApplicationFactory<Program>, IAsyncLifetime
                 options.AddPolicy("login", context =>
                     RateLimitPartition.GetNoLimiter(context.Connection.RemoteIpAddress?.ToString() ?? "unknown"));
             });
+
+            services.RemoveAll<INotificationChannel>();
+            services.AddScoped<INotificationChannel, FakeNotificationChannel>();
         });
     }
 

@@ -11,6 +11,7 @@ using Web.API.OpenApi;
 using Web.Application;
 using Web.Domain.Enums;
 using Web.Infrastructure;
+using Web.Infrastructure.BackgroundTasks;
 using Web.Infrastructure.Notifications;
 
 
@@ -24,7 +25,8 @@ builder.Services.AddSerilog((services, config) => config
 builder.Services
     .AddApplicationServices(builder.Configuration)
     .AddDataAccess(builder.Configuration)
-    .AddNotificationChannels();
+    .AddNotificationChannels()
+    .AddBackgroundTasks();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options => {
